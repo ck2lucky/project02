@@ -1,0 +1,182 @@
+@charset "utf-8";
+
+:root{
+    --slide-height:40%;
+}
+
+*{margin:0; padding:0;}
+li{list-style: none;}
+a{
+    text-decoration: none;
+    display:block;
+    color:inherit;
+}
+img{
+    display:block; border:0;
+}
+#header{
+    background:#fff;
+    height:100px;
+    width:100%;
+    position: fixed;
+    left:50%;
+    transform: translateX(-50%);
+    z-index: 9999999;
+}
+header{
+    width:80%; 
+    height:100px;/* 빼요~ */
+    margin:0 auto;
+}
+#slide{
+    padding-top:var(--slide-height);
+    background-size: cover;
+    background-position:center center;
+}
+
+#content{
+    width:80%;
+    background:#aff; /* 빼요~ */ 
+    margin:0 auto;
+}
+
+footer{
+    width:80%;
+    height:100px; background:#afa; /* 빼요~ */ 
+    margin:0 auto;
+}
+
+header{
+    display:flex;
+    justify-content: space-between;
+    width:80%;   
+}
+.logo{
+    padding-top: 30px;
+    font-size: 12px;
+}
+.gnb{
+    display:flex;
+    width:300px;
+    justify-content: space-between;
+}
+.gnb a{
+    line-height: 100px;
+}
+.gnb a:hover{
+    color:lightcoral;
+}
+
+/* 슬라이드 */
+
+.slideBg1{
+    padding-top:var(--slide-height); 
+    position: absolute;
+    width:100%;
+    background-position: center center;
+    background-size: cover;
+    top:100px;
+    opacity: 0;
+    z-index: -999;
+}
+.slideBg2{
+    padding-top:var(--slide-height); 
+    position: absolute;
+    width:100%;
+    background-position: center center;
+    background-size: cover;
+    top:100px;
+    z-index: -9999999;
+}
+
+#slide{
+    position: relative;
+}
+.slide_title{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    text-align: center;
+}
+
+.slideBg1.on{
+    animation: fade 3s forwards;
+}
+
+@keyframes fade {
+    0%{opacity:0;}
+    30%{opacity:1;}
+    70%{opacity:1;}
+    100%{opacity:0;}
+}
+
+.s_head{
+    display:flex;
+}
+.s_head h3{
+    width:50%;
+    padding:5px;
+    font-size: 5rem;
+    text-shadow: 0px 0px 5px #333;
+}
+.s_head h3:nth-child(1){
+    text-align: right;
+    color:#ff0;
+    animation: txt 3s infinite;
+}
+@keyframes txt{
+    0%{transform: rotateX(0deg);}
+    5%{transform: rotateX(90deg);}
+    30%{transform: rotateX(0deg);}
+    35%{transform: rotateX(-20deg);}
+    40%{transform: rotateX(0deg);}
+}
+
+
+.s_head h3:nth-child(2){
+    text-align: left;
+    color:#fff;
+}
+.slide_title p{
+    color:#fff;
+    line-height: 1.2rem;
+    padding:30px;
+}
+.slide_title button{
+    width:120px;
+    line-height: 40px;
+    border-radius: 5px;
+    background:#f55;
+    border:0;
+    color:#fff;
+}
+
+.slide_top{
+    padding-top: 100px;
+}
+
+#content section .sec_title{
+    text-align: center;
+    padding-bottom: 30px;
+}
+#content section .sec_title h3{
+    font-size: 2rem;
+    line-height: 6rem;
+}
+#content section .sec_title p{
+    font-size: .8rem;
+    line-height: 1.5rem;
+}
+
+#content .sec_content{
+    display:flex;
+    justify-content: space-between;
+}
+#content .sec_content .card{
+    width:30%;
+}
+#content .sec_content .card img{
+    width:100%;
+}
